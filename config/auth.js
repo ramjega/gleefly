@@ -10,9 +10,9 @@ module.exports = {
   },
 
   'twitterAuth' : {
-      'consumerKey'       : 'g4fod0hSvYKQ1zt92aXPNzk9c',
-      'consumerSecret'    : 'orJipbM0ZqQFILDddZ7EMKKmbkL43VaOalQzmrfz3Iz0UQrghp',
-      'callbackURL'       : 'http://127.0.0.1:5000/auth/twitter/callback'
+      'consumerKey'       : 'bJqg5WcNCFimqKG0G0476u12q',
+      'consumerSecret'    : 'OIEyUKjt93t3Kva6A7VfLKWCpIFnYu7QPMvYudHDfaO6JAbyAa',
+      'callbackURL'       : 'http://ukiassignment3byram.herokuapp.com//auth/twitter/callback'
   },
 
     'googleAuth' : {
