@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ShowTrakr</title>
+      <link rel="icon" href="images/television.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .a1{ color: black;
+  font-size: 15px;}
+    .box{background-color: lightgray;
+    display: inline-block;
+    padding-left: 5px;padding-right: 5px;
+    font-size: 12px;
+    border-radius: 3px
+    }
+    .alphabets-link-size{font-size: 27px;}
+    .center {margin: auto;
+    width: 65%;
+    padding-left: 9%;
+    align-self: auto;}
+    .background-box{background-color:hsl(0, 0%, 97%);
+    padding-top:10px;
+    padding-bottom:10px;
+
+
+    }
+    #boxshadow {box-shadow: 0px 2px 2px grey;}
+    .imgdesign{border-radius: 10px;
+    width:60%;
+    height:80%;
+    }
+    .imglink{
+    font-size: 20px;
+    color: black;}
+    .episodes{font-size: 15px;
+    color: grey;}
+    .vl{border-left: 3px solid black;
+    height: 80%;
+  margin-left: : 2px;}
+  .containerbox{width : 20%;
+  height: 460px;
+    box-shadow: 0px 4px 2px grey;
+  }
+  .donthaveaccount{color: grey; }
+  footer {
+     position:absolute;
+     bottom:0;
+     width:100%;
+     height:60px;   /* Height of the footer */
+     background:#6cf;
+  }
+
+    </style>
+    </head>
+    <body  style="background-color:hsl(0, 0%, 94%)">
+    <!--starting navbar-->
+    <nav id="boxshadow" style="background-color:white;" class="navbar navbar-default">
+
+    <div style="background-color:yellow;" class="navbar-header">
+    <a class="navbar-brand"href="#"><span class="glyphicon glyphicon-film"></span> Show<strong>Trackr</stron></a>
+    </div>
+    <ul class="nav navbar-nav">
+    <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+    <li><a href="/add"><span class="glyphicon glyphicon-plus"></span> Add</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Signup</a></li>
+    <li class="active"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+    </nav>
+    <!-- nav bar end..-->
+<br><br><br>
+<div class="ng-scope">
+  <div class="container ng-scope containerbox">
+    <div class="row">
+      <div class="center-form panel">
+        <div class="panel-body">
+
+          <h2 class="text-center" style="color:black; font-size:30px;"><b>Login</b></h2>
+          <!-- show any messages that come back with authentication -->
+          <% if (message.length > 0) { %>
+              <div class="alert alert-danger"><%= message %></div>
+          <% } %>
+
+          <form action="/login" method="post">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email" name="email"> <br>
+                 <input type="password" class="form-control" placeholder="Password" name="password"><br>
+                 <button class="btn btn-success btn-block" type="submit" name="button">Log in</button><br>
+                 <center><a class="a1" href="#">Forgot your password?</a><br><span style="color:grey;">Don't have account yet?</span><a  class="a1"href="/signup"> Sign up</a>
+                   <table><tr>
+                   <td style="width:47%"><hr/></td>
+                   <td style="vertical-align:middle; text-align: center">or</td>
+                   <td style="width:47%"><hr/></td>
+                   </tr></table></center>
+                       <a href="/auth/facebook" class="btn btn-primary btn-block"><span class="fa fa-facebook"></span> Signup with Facebook</a><br>
+                       <a href="/auth/google" class="btn btn-danger btn-block"><span class="fa fa-google-plus"></span> Signup with Google</a><br>
+             <a href="/auth/twitter" class="btn btn-info btn-block"><span class="fa fa-twitter"></span> Signup with Twitter</a>
+
+
+            </div>
+          </form>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div><br><br><br><br><br><br><br><br><br><br><br><br>
+<!--footer start-->
+<footer id="boxshadow"><div class="container-fluid footer-default" style="background-color:white;"><center><div>
+  <div class="col-sm-4 feature"
+
+  <p style="align:right;">Created by Uki coding school student.<br>This is a Uki coding school assignment project.| Created & Designed | by <a href="https://ramjega.github.iomjega.github.io/"><strong>Sriram</strong></a><br><a href="http://uki.life/">UKI LIFE</a><br>info@uki.life</p>
+</div>
+  <div class="col-sm-4 feature"><center><h3>| Thank you for visited to this page |</h3></center></div>
+  <div class="col-sm-4 feature" style="align-self:right;">
+    <p>Jegatheesan Sriram <br>0775228995 <br>sriramram1995@gmail.com <br><a href="https://ramjega.github.iomjega.github.io/">Website</a></div>
+  </div>
+
+</div></div></center>
+</footer>
+
+  </body>
+
+</html>

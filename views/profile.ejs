@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ShowTrakr</title>
+    <link rel="icon" href="images/television.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  .hide1 {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+a{ color: gray;
+font-weight: normal;}
+.box{background-color: lightgray;
+  display: inline-block;
+padding-left: 5px;padding-right: 5px;
+  font-size: 12px;
+  border-radius: 3px
+}
+.alphabets-link-size{font-size: 27px;}
+.center {margin: auto;
+width: 65%;
+padding-left: 9%;
+align-self: auto;}
+.background-box{background-color:hsl(0, 0%, 97%);
+padding-top:10px;
+padding-bottom:10px;
+
+
+  }
+#boxshadow {box-shadow: 2px 2px 2px grey;}
+.imgdesign{border-radius: 10px;
+  width:100%;
+  height:100%;
+}
+.imglink{
+font-size: 20px;
+color: black;}
+.episodes{font-size: 15px;
+color: grey;}
+footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:#6cf;
+}
+</style>
+  </head>
+  <body style="background-color:hsl(0, 0%, 94%)">
+<!--starting navbar-->
+<nav id="boxshadow" style="background-color:white;" class="navbar navbar-default">
+
+    <div style="background-color:yellow;" class="navbar-header">
+    <a class="navbar-brand"href="#"><span class="glyphicon glyphicon-film"></span> Show<strong>Trackr</stron></a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+    <li><a href="/addwithuser"><span class="glyphicon glyphicon-plus"></span> Add</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a ><span class="glyphicon glyphicon-user"></span> <% if (user.twitter.username != null) { %>
+<%= user.twitter.username %>
+<% } else if (user.google.email != null) { %>
+<%= user.google.email %>
+<% } else if (user.facebook.name  != null)  { %>
+<%= user.facebook.name  %>
+<% } else { %>
+<%= user.local.email %>
+<% } %></a></li>
+    <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+  </ul>
+</nav>
+  <!-- nav bar end..-->
+
+
+<!-- Pagination start-->
+<center class="background-box">
+<div class="alphabets-link-size">
+
+  <!-- Alphabets start-->
+  <button class="btn btn-sm btn-primary"onclick="filterSelection('all')">All</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('aphabet-0-9')">0-9</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-a')">A</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-b')">B</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-c')">C</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-d')">D</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-e')">E</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-g')">G</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-h')">H</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-i')">I</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-j')">J</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-k')">K</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-l')">L</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-m')">M</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-n')">N</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-o')">O</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-p')">P</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-q')">Q</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-r')">R</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-s')">S</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-t')">T</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-u')">U</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-v')">V</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-w')">W</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-x')">X</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-y')">Y</button>
+<button class="btn btn-sm btn-primary"onclick="filterSelection('alphabet-z')">Z</button><br></div> <!-- Alphabets ends-->
+
+<!--Names start-->
+<button class="btn btn-sm btn-default"onclick="filterSelection('all')">All</button>
+    <button class="btn btn-sm btn-default"onclick="filterSelection('action')">Action</button>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('adventure')">Adventure</a>
+    <button class="btn btn-sm btn-default"onclick="filterSelection('animation')">Animation</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('children')">Children </a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('comedy')">Comedy</a>
+    <button class="btn btn-sm btn-default"onclick="filterSelection('crime')">Crime</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('documentary')">Documentary</a>
+    <button class="btn btn-sm btn-default"onclick="filterSelection('drama')">Drama</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('family')">Family</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('fantasy')">Fantasy</a>
+    <button class="btn btn-sm btn-default"onclick="filterSelection('food')">Food</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('homeandgarden')">Home and Garden</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('horror')">Horror</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('mini-series')">Mini-Series</a><br>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('mystery')">Mystery</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('news')">News</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('reality')">Reality</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('romance')">Romance</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('sci-fi')">Sci-Fi</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('sport')">Sport</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('suspense')">Suspense</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('talkshow')">Talk Show</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('thriller')">Thriller</a>
+      <button class="btn btn-sm btn-default"onclick="filterSelection('travel')">Travel</a><!--Names end-->
+</div></center><!--pagination ends-->
+<br>
+<!--Top shows div start-->
+<div class="container ng-scope">
+  <div class="panel panel-default">
+    <div class="panel-heading"><!--heading pannel starts-->
+      TOP 12 SHOWS
+  <!--Search box starts here-->
+  <div class="pull-right">
+   <input class="search ng-pristine ng-untouched ng-valid" ng-model="query.name" placeholder="Search..."type="text" >
+      </div><!--search box ends here-->
+    </div><!--Heading pannel ends here-->
+
+<div class="panel-body">
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</div>
+<!--footer start-->
+<footer><div class="container-fluid footer-default" id="shadowbox" style="background-color:white;"><center><div>
+  <div class="col-sm-4 feature"
+
+  <p style="align:right;">Created by Uki coding school student.<br>This is a Uki coding school assignment project.| Created & Designed | by <a href="https://ramjega.github.iomjega.github.io/"><strong>Sriram</strong></a><br><a href="http://uki.life/">UKI LIFE</a><br>info@uki.life</p>
+</div>
+  <div class="col-sm-4 feature"><center><h3>| Thank you for visited to this page |</h3></center></div>
+  <div class="col-sm-4 feature" style="align-self:right;">
+    <p>Jegatheesan Sriram <br>0775228995 <br>sriramram1995@gmail.com <br><a href="https://ramjega.github.iomjega.github.io/">Website</a></div>
+  </div>
+
+</div></div></center>
+</footer>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("hide1");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
