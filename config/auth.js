@@ -16,9 +16,9 @@ module.exports = {
   },
 
     'googleAuth' : {
-        'clientID'      : '719244576802-4q5uschlsheme5scdohfqh6a2ijncond.apps.googleusercontent.com',
-        'clientSecret'  : 'U8j0EHGzBKsyUyGr8hTq0RjX',
-        'callbackURL'   : 'http://ukiassignment3byram.herokuapp.com/'
+        'clientID'      : '719244576802-b1fmaet8ukveo13fsfcqecuceqlass4m.apps.googleusercontent.com',
+        'clientSecret'  : 'vc4zu_Oun4Ky7Ale3rflbHTb',
+        'callbackURL'   : 'http://ukiassignment3byram.herokuapp.com/auth/google/callback'
     }
 
 };
