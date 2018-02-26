@@ -2,8 +2,8 @@
 module.exports = {
 
   'facebookAuth' : {
-      'clientID'      : '2047379022143883', // your App ID
-      'clientSecret'  : '3942e359231b0ee76ce3dea5e588448e',
+      'clientID'      : '1988897964770535', // your App ID
+      'clientSecret'  : '4af0659c8ab95faf672bdd490e39d340',
       'callbackURL'   : 'http://ukiassignment3byram/auth/facebook/callback',
       'profileURL'    : 'https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email',
       'profileFields' : ['id', 'emails', 'name'] // For requesting permissions from Facebook API
