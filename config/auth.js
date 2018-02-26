@@ -16,8 +16,8 @@ module.exports = {
   },
 
     'googleAuth' : {
-        'clientID'      : '719244576802-gtgf6vmvgs3um8tq2n8cq0tqal4s6onc.apps.googleusercontent.com',
-        'clientSecret'  : 'Paikb6hYAQnoGbgEpMs4yGWs',
+        'clientID'      : '719244576802-vb1l8je58jr8reg3ocgnp056o4sucohu.apps.googleusercontent.com',
+        'clientSecret'  : '6JDLMcKZhQAYtbvOZpTr-P8C',
         'callbackURL'   : 'http://ukiassignment3byram.herokuapp.com/auth/google/callback'
     }
 
