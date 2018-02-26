@@ -18,7 +18,7 @@ module.exports = {
     'googleAuth' : {
         'clientID'      : '719244576802-gtgf6vmvgs3um8tq2n8cq0tqal4s6onc.apps.googleusercontent.com',
         'clientSecret'  : 'Paikb6hYAQnoGbgEpMs4yGWs',
-        'callbackURL'   : 'http://ukiassignment3byram.herokuapp.com/auth/facebook/callback'
+        'callbackURL'   : 'http://ukiassignment3byram.herokuapp.com/auth/google/callback'
     }
 
 };
