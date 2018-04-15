@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+var book       = require('./models/book');
 // app/routes.js
 module.exports = function(app, passport) {
 
@@ -5,15 +7,55 @@ module.exports = function(app, passport) {
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', function(req, res) {
-        res.render('index.ejs'); // load the index.ejs file
+        res.render('index.ejs' , {
+          user : req.user
+        }); // load the index.ejs file
     });
+
     app.get('/add', function(req, res) {
         res.render('add.ejs'); // load the index.ejs file
     });
+
+    app.get('/about', function(req, res) {
+        res.render('about.ejs', {
+          user : req.user
+        });
+        // load the index.ejs file
+    });
+
+
+    app.get('/1stcar', function(req, res) {
+        res.render('1stcar.ejs', {
+          user : req.user
+        });
+        // load the index.ejs file
+    });
+
+    app.get('/2ndcar', function(req, res) {
+        res.render('2ndcar.ejs', {
+          user : req.user
+        });
+        // load the index.ejs file
+    });
+    app.get('/success', function(req, res) {
+        res.render('success.ejs', {
+          user : req.user
+        });
+        // load the index.ejs file
+    });
+
+    app.get('/book', isLoggedIn, function(req, res) {
+        res.render('bookpage.ejs' ,{
+          user : req.user
+        }); // load the index.ejs file
+    });
+
+
     app.get('/addwithuser', isLoggedIn, function(req, res) {
         res.render('addwithuser.ejs', {
             user : req.user // get the user out of session and pass to template
         });
+
     });
     // =====================================
     // LOGIN ===============================
@@ -24,13 +66,24 @@ module.exports = function(app, passport) {
         // render the page and pass in any flash data if it exists
         res.render('login.ejs', { message: req.flash('loginMessage') });
     });
+    app.get('/booklogin', function(req, res) {
+
+        // render the page and pass in any flash data if it exists
+        res.render('booklogin.ejs', { message: req.flash('loginMessage') });
+    });
 
     // process the login form
     // app.post('/login', do all our passport stuff here);
     // process the login form
         app.post('/login', passport.authenticate('local-login', {
-            successRedirect : '/profile', // redirect to the secure profile section
+            successRedirect : '/', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
+            failureFlash : true // allow flash messages
+        }));
+
+        app.post('/car/login', passport.authenticate('local-login', {
+            successRedirect : '/book', // redirect to the secure profile section
+            failureRedirect : '/booklogin', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
     // =====================================
@@ -46,7 +99,7 @@ module.exports = function(app, passport) {
     // process the signup form
     // app.post('/signup', do all our passport stuff here);
         app.post('/signup', passport.authenticate('local-signup', {
-            successRedirect : '/profile', // redirect to the secure profile section
+            successRedirect : '/', // redirect to the secure profile section
             failureRedirect : '/signup', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
@@ -129,6 +182,44 @@ module.exports = function(app, passport) {
     });
 
 
+    app.post('/book', function(req, res) {
+
+
+          var newBook = new book();
+          newBook.firstName = req.body.firstName;
+          newBook.lastName = req.body.lastName;
+          newBook.email = req.body.email;
+          newBook.nicNumber = req.body.nicNumber;
+          newBook.address = req.body.address;
+          newBook.phoneNumber = req.body.phoneNumber;
+          newBook.pickupDate = req.body.pickupDate;
+          newBook.pickTime = req.body.pickTime;
+          newBook.pickLocation = req.body.pickLocation;
+          newBook.driver = req.body.driver;
+          newBook.dropDate = req.body.dropDate;
+          newBook.dropLocation = req.body.dropLocation;
+          newBook.carId = req.body.carId;
+
+
+
+
+
+
+
+
+    	newBook.save(function(err,newBook){
+    	    if(err){
+            res.redirect('/book');
+    	        console.log(err);
+    	    }else{
+            res.redirect('/success');
+    	        console.log("Document Save Done");
+    	    }
+    		});
+
+
+
+          });
 
 
 };
@@ -141,5 +232,5 @@ function isLoggedIn(req, res, next) {
         return next();
 
     // if they aren't redirect them to the home page
-    res.redirect('/');
+    res.redirect('/booklogin');
 }

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>ShowTrackr</title>
+    <title>Gleefly</title>
       <link rel="icon" href="images/television.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -39,19 +39,12 @@ color: black;}
 color: grey;}
 input[type=text], select{
   width: 100%;
-  padding: 12px 10px;
+
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
-footer {
-   position:absolute;
-   bottom:0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-   background:#6cf;
 }
 </style>
   </head>
@@ -59,41 +52,58 @@ footer {
 <!--starting navbar-->
 <nav id="boxshadow" style="background-color:white;" class="navbar navbar-default">
 
-    <div style="background-color:yellow;" class="navbar-header">
-    <a class="navbar-brand"href="#"><span class="glyphicon glyphicon-film"></span> Show<strong>Trackr</stron></a>
+  <div style="background-color:orange;" class="navbar-header">
+  <a class="navbar-brand"href="#"><span class="glyphicon glyphicon-film"></span> Glee<strong>fly</stron></a>
   </div>
   <ul class="nav navbar-nav">
-    <li><a href="/profile"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-    <li class="active"><a href="#"><span class="glyphicon glyphicon-plus"></span> Add</a></li>
+    <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+
   </ul>
   <ul class="nav navbar-nav navbar-right">
-    <li><a ><span class="glyphicon glyphicon-user"></span> <% if (user.twitter.username != null) { %>
-<%= user.twitter.username %>
-<% } else if (user.google.email != null) { %>
-<%= user.google.email %>
-<% } else if (user.facebook.name  != null)  { %>
-<%= user.facebook.name  %>
-<% } else { %>
-<%= user.local.email %>
-<% } %></a></li>
-    <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-
+    <% if(user){ %>
+  <!--Welcome...!!--><li><a href="/profile">
+  <% if (user.twitter.username != null) { %>
+  <%= user.twitter.username %>
+  <% } else if (user.google.email != null) { %>
+  <%= user.google.email %>
+  <% } else if (user.facebook.name  != null)  { %>
+  <%= user.facebook.name  %>
+  <% } else { %>
+  <%= user.local.email %>
+  <% } %>
+  </a>
+  </li>
+   <li><a href="/logout"><i class="fa fa-sign-out"> Logout</a></i>
+   <% } else{ %>
+      <li><a href="/login"><i class="fa fa-sign-in"></i>
+      Login</a></li>
+          <li><a href="/signup"><i class="fa fa-user-plus"></i>
+      Sign Up</a></li>
+  <% } %>
   </ul>
 </nav>
   <!-- nav bar end..-->
   <div class="container">
     <div class="panel panel-default">
       <div class="panel-heading">
-        ADD TV SHOW
+      Book Page
 
       </div>
       <div class="panel-body">
 
-        <form class="" action="index.html" method="post">
-          <label for="name">Name</label>
-        <br>  <input type="text" id="tv-show-name" placeholder="Enter TV Show Name">
-      <div class=" alert-info"><p id="tv-show"></p></div>
-    <button type="button" class="btn btn-info" id="addd" onclick="getInfo()">Add</button>
+        <form class="" action="/book" method="post">
+          <span>pickupDate</span> <br>
+      <input type="date" class="form-control" placeholder="Pickup date" name="pickupDate" required> <br>
+      <input type="" class="form-control" placeholder="Pick time" name="pickTime" required> <br>
+          <input type="text" class="form-control" placeholder="Pick location" name="pickLocation" required> <br>
+        <input type="date" class="form-control" placeholder="Drop date" name="dropDate" required> <br>
+        <input type="number" class="form-control" placeholder="Phone number" name="phoneNumber" required> <br>
+          <input type="text" class="form-control" placeholder="NIC number" name="nicNumber" required> <br>
+        <input type="radio" name="driver" value="with driver">With driver<br>
+  <input type="radio" name="driver" value="without driver">Without driver<br>
+
+
+        <button type="submit"  class="btn btn-info">ADD</button>
         </form>
       </div>
     </div>
@@ -116,24 +126,5 @@ footer {
   </div></div></center>
   </footer>
 
-
-
-
-<script>
-
-function getInfo() {
-    var tvShow= document.getElementById('tv-show-name').value;
-    var c=tvShow[0];
-
-    if(c.toLowerCase() == c.toUpperCase()) {
-    document.getElementById("tv-show").innerHTML = " Failed!! Invalid TV Show name";
-    }
-     else {
-    document.getElementById("tv-show").innerHTML = "Success!!" + " " +tvShow +" Tv show has been added";
-    }
- }
-
-</script>
-
-
+  </body>
 </html>

@@ -7,6 +7,8 @@ var bcrypt   = require('bcrypt-nodejs');
 var userSchema = mongoose.Schema({
 
     local            : {
+        firstname    : String,
+        lastname     : String,
         email        : String,
         password     : String,
     },
@@ -31,6 +33,8 @@ var userSchema = mongoose.Schema({
 
 });
 
+
+
 // methods ======================
 // generating a hash
 userSchema.methods.generateHash = function(password) {
@@ -44,3 +48,16 @@ userSchema.methods.validPassword = function(password) {
 
 // create the model for users and expose it to our app
 module.exports = mongoose.model('User', userSchema);
+//schema to our book details
+// var bookSchema = mongoose.Schema({
+// pickupDate: {type:Date} ,
+// pickTime:{type:String},
+// pickLocation:{type:String},
+// dropDate: {type:Date},
+// phoneNumber: {type:Number},
+// nicNumber: {type:String},
+// driver: {type:String}
+// });
+//
+//
+// module.exports = mongoose.model('book', bookSchema);

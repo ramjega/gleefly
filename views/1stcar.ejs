@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->  <html> <!--<![endif]-->
+<head>
+    <!-- Page Title -->
+    <title>Gleefly</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Travelo | Responsive HTML5 Travel Template">
+    <meta name="author" content="SoapTheme">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <!-- Current Page Styles -->
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/flexslider/flexslider.css" media="screen" />
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="css/style.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="css/updates.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- CSS for IE -->
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <![endif]-->
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="page-wrapper">
+        <header id="header" class="navbar-static-top">
+            <div class="topnav hidden-xs">
+                <div class="container">
+
+                    <!-- <ul class="quick-menu pull-right">
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                    </ul> -->
+                </div>
+            </div>
+
+            <div class="main-header">
+
+                <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                    Mobile Menu Toggle
+                </a>
+
+                <div class="container">
+                    <h1 class="logo navbar-brand">
+                        <a href="/" title="Gleefly - home">
+                            <img src="images/logo.png" class="logo-pad" alt="Travelo HTML5 Template" />
+                        </a>
+                    </h1>
+
+                    <nav id="main-menu" role="navigation">
+                        <ul class="menu quick-menu pull-right">
+
+
+                          <% if(user){ %>
+                          <!--Welcome...!!--><li><a href="/profile">
+                          <% if (user.twitter.username != null) { %>
+                          <%= user.twitter.username %>
+                          <% } else if (user.google.email != null) { %>
+                          <%= user.google.email %>
+                          <% } else if (user.facebook.name  != null)  { %>
+                          <%= user.facebook.name  %>
+                          <% } else { %>
+                          <%= user.local.email %>
+                          <% } %>
+                          </a>
+                          </li>
+                          <li><a href="/logout"><i class="fa fa-sign-out"> Logout</a></i>
+                          <% } else{ %>
+                            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>
+                             Login</a></li>
+                                <li><a href="/signup"><span class="glyphicon glyphicon-user"></span>
+                             Sign Up</a></li>
+                          <% } %>
+                          <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                            <li><a href="/about"><span class="fa fa-info"></span> About</a></li>
+
+                            <!-- <li class="menu-item-has-children">
+                                <a href="car-index.html">Cars</a>
+                                <ul>
+                                    <li><a href="car-index.html">Home Cars</a></li>
+                                    <li><a href="car-list-view.html">List View</a></li>
+                                    <li><a href="car-grid-view.html">Grid View</a></li>
+                                    <li><a href="car-block-view.html">Block View</a></li>
+                                    <li><a href="car-detailed.html">Detailed</a></li>
+                                    <li><a href="car-booking.html">Booking</a></li>
+                                    <li><a href="car-thankyou.html">Thank You</a></li>
+                                </ul>
+                            </li> -->
+
+
+                        </ul>
+                    </nav>
+                </div>
+
+
+            </div>
+            <div id="travelo-signup"style="display:none;" class="travelo-signup-box travelo-box">
+                <div class="login-social">
+                    <a href="#" class="button login-facebook"><i class="soap-icon-facebook"></i>Login with Facebook</a>
+                    <a href="#" class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login with Google+</a>
+                </div>
+                <div class="seperator"><label>OR</label></div>
+                <div class="simple-signup">
+                    <div class="text-center signup-email-section">
+                        <a href="#" class="signup-email"><i class="soap-icon-letter"></i>Sign up with Email</a>
+                    </div>
+                    <p class="description">By signing up, I agree to Travelo's Terms of Service, Privacy Policy, Guest Refund olicy, and Host Guarantee Terms.</p>
+                </div>
+                <div class="email-signup">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="input-text full-width" placeholder="first name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="input-text full-width" placeholder="last name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="input-text full-width" placeholder="email address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="input-text full-width" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="input-text full-width" placeholder="confirm password">
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Tell me about Travelo news
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p class="description">By signing up, I agree to Travelo's Terms of Service, Privacy Policy, Guest Refund Policy, and Host Guarantee Terms.</p>
+                        </div>
+                        <button type="submit" class="full-width btn-medium">SIGNUP</button>
+                    </form>
+                </div>
+                <div class="seperator"></div>
+                <p>Already a Travelo member? <a href="#travelo-login" class="goto-login soap-popupbox">Login</a></p>
+            </div>
+            <div id="travelo-login" style="display:none;" class="travelo-login-box travelo-box">
+                <div class="login-social">
+                    <a href="#" class="button login-facebook"><i class="soap-icon-facebook"></i>Login with Facebook</a>
+                    <a href="#" class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login with Google+</a>
+                </div>
+                <div class="seperator"><label>OR</label></div>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="input-text full-width" placeholder="email address">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="input-text full-width" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                        <a href="#" class="forgot-password pull-right">Forgot password?</a>
+                        <div class="checkbox checkbox-inline">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="seperator"></div>
+                <p>Don't have an account? <a href="#travelo-signup" class="goto-signup soap-popupbox">Sign up</a></p>
+            </div>
+        </header>
+        <div class="">
+            <div class="container">
+
+            </div>
+        </div>
+        <section id="content" class="gray-area">
+            <div class="container car-detail-page">
+                <div class="row">
+                    <div id="main" class="col-md-9">
+                      <div id="photos-tab" class="tab-pane fade in active">
+                          <div class="photo-gallery style1" data-animation="slide" data-sync="#photos-tab .image-carousel">
+                              <ul class="slides">
+                                  <li><img src="images/cars/honda-civic/001.png" alt="" /></li>
+                                  <li><img src="images/cars/honda-civic/002.png" alt="" /></li>
+                                  <li><img src="images/cars/honda-civic/003.png" alt="" /></li>
+                                  <li><img src="images/cars/honda-civic/004.png" alt="" /></li>
+                                  <li><img src="images/cars/honda-civic/005.png" alt="" /></li>
+
+                              </ul>
+                          </div>
+                          <div class="image-carousel style1" data-animation="slide" data-item-width="70" data-item-margin="10" data-sync="#photos-tab .photo-gallery">
+                              <ul class="slides">
+                                  <li><img src="images/cars/honda-civic/001.png" alt="" /></li>
+                                  <li><img src="images/cars/honda-civic/002.png" alt="" /></li>
+                                  <li><img src="images/cars/honda-civic/003.png" alt="" /></li>
+                                  <li><img src="images/cars/honda-civic/004.png" alt="" /></li>
+                                  <li><img src="images/cars/honda-civic/005.png" alt="" /></li>
+
+                              </ul>
+                          </div>
+                      </div><br>
+                        <div class="tab-container">
+                            <ul class="tabs">
+                                <li class="active">
+                                    <a href="#car-details" data-toggle="tab">Car Details</a>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="car-details">
+                                    <div class="intro box table-wrapper full-width hidden-table-sms">
+                                        <div class="col-sm-4 table-cell travelo-box">
+                                            <dl class="term-description">
+                                                <dt>Rental Company:</dt><dd>Gleefly</dd>
+                                                <dt>Car Type:</dt><dd>Hybrid</dd>
+                                                <dt>Car name:</dt><dd>Honda Civic</dd>
+                                                <dt>Passenger:</dt><dd>4</dd>
+                                                <dt>Baggage:</dt><dd>2</dd>
+                                                <dt>Car features:</dt><dd>Available</dd>
+                                                <dt>Door Delivery Fees:</dt><dd>$155.61</dd>
+
+                                            </dl>
+                                        </div>
+                                        <div class="col-sm-8 table-cell">
+                                            <div class="detailed-features clearfix">
+                                                <div class="col-md-6">
+                                                    <h4 class="box-title">
+                                                        Pick-up location details
+                                                        <small>Phone: 1-0825889755</small>
+                                                    </h4>
+                                                    <div class="icon-box style11">
+                                                        <div class="icon-wrapper">
+                                                            <i class="soap-icon-clock"></i>
+                                                        </div>
+                                                        <dl class="details">
+                                                            <dt class="skin-color">pickup time</dt>
+                                                            <dd>Thu, Nov 14, 2013  |  11:00 AM</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="icon-box style11">
+                                                        <div class="icon-wrapper">
+                                                            <i class="soap-icon-departure"></i>
+                                                        </div>
+                                                        <dl class="details">
+                                                            <dt class="skin-color">Location</dt>
+                                                            <dd>London city, airport</dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h4 class="box-title">
+                                                        Drop-off location details
+                                                        <small>Phone: 1-0825889755</small>
+                                                    </h4>
+                                                    <div class="icon-box style11">
+                                                        <div class="icon-wrapper">
+                                                            <i class="soap-icon-clock"></i>
+                                                        </div>
+                                                        <dl class="details">
+                                                            <dt class="skin-color">Drop off Time</dt>
+                                                            <dd>Fri, Nov 15, 2013  |  11:00 AM </dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="icon-box style11">
+                                                        <div class="icon-wrapper">
+                                                            <i class="soap-icon-departure"></i>
+                                                        </div>
+                                                        <dl class="details">
+                                                            <dt class="skin-color">Location</dt>
+                                                            <dd>Paris Orly Airport (ORY)</dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2>Car Rental Information</h2>
+                                    <p>If you book this car for limited milege you can drive 120 KM, When you pass this limit you have to pay some tax for every extra kilometers.We would be more than happy to help you.
+                                      Our team advisor are 24/7 at your service to help you.We are provideing the cars for very low prices.Our speciality is car door delivery, You can book the car anytime and from anyware.</p>
+                                    <br />
+                                    <div class="car-features box">
+                                        <div class="row add-clearfix">
+                                            <div class="col-sms-6 col-sm-6 col-md-4">
+                                                <span class="icon-box style2">
+                                                    <i class="soap-icon-user circle"></i>4 Passengers
+                                                </span>
+                                            </div>
+                                            <div class="col-sms-6 col-sm-6 col-md-4">
+                                                <span class="icon-box style2">
+                                                    <i class="soap-icon-suitcase circle"></i>2 Bags
+                                                </span>
+                                            </div>
+                                            <div class="col-sms-6 col-sm-6 col-md-4">
+                                                <span class="icon-box style2">
+                                                    <i class="soap-icon-aircon circle"></i>air conditioning
+                                                </span>
+                                            </div>
+                                            <div class="col-sms-6 col-sm-6 col-md-4">
+                                                <span class="icon-box style2">
+                                                    <i class="soap-icon-fmstereo circle"></i>Satellite Navigation
+                                                </span>
+                                            </div>
+                                            <div class="col-sms-6 col-sm-6 col-md-4">
+                                                <span class="icon-box style2">
+                                                    <i class="soap-icon-fueltank circle"></i>Disel Vehicle
+                                                </span>
+                                            </div>
+                                            <div class="col-sms-6 col-sm-6 col-md-4">
+                                                <span class="icon-box style2">
+                                                    <i class="soap-icon-automatic-transmission circle"></i>Automatic transmission
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2>Enhance your Rental</h2>
+                                    <div class="intro box table-wrapper full-width hidden-table-sms">
+                                        <div class="col-md-4 table-cell travelo-box protect-passengers">
+                                            <div class="icon-box style12">
+                                                <div class="icon-wrapper">
+                                                    <i class="soap-icon-passenger circle"></i>
+                                                </div>
+                                                <h5 class="details title">Protect your smaller, lighter passengers</h5>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <label>Toddler Seat</label>
+                                                    <div class="selector full-width">
+                                                        <select>
+                                                            <option value="1">1</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <label>Infant Seat</label>
+                                                    <div class="selector full-width">
+                                                        <select>
+                                                            <option value="0">0</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 table-cell">
+                                            <div class="car-damage travelo-box">
+                                                <div class="pull-right logo">
+                                                    <img src="images/cars/honda-civic/001.png" alt="" />
+                                                </div>
+                                                <div class="icon-box box style12">
+                                                    <div class="icon-wrapper">
+                                                        <i class="soap-icon-car circle"></i>
+                                                    </div>
+                                                    <h5 class="details title">Add rental car damage protection</h5>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-8">
+                                                        <label class="radio radio-inline">
+                                                            <input type="radio" name="damage-protection">Yes, add Rental Car Damage Protection for the rental period for $18.00 USD. <a href="#" class="skin-color">Learn More</a>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <label class="radio radio-inline">
+                                                            <input type="radio" name="damage-protection">No Thanks
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar col-md-3">
+                        <article class="detailed-logo">
+                            <figure>
+                                <img width="114" height="85" src="images/cars/honda-civic/001.png" alt="">
+                            </figure>
+                            <div class="details">
+                                <h2 class="box-title">Honda Civic<small>2000</small></h2>
+                                <span class="price clearfix">
+                                    <small class="pull-left">Limiitted</small>
+                                    <span class="pull-right">RS.6000</span><br>
+                                    <small class="pull-left">Unlimiitted</small>
+                                    <span class="pull-right">RS.10000</span>
+                                </span>
+                                <div class="mile clearfix">
+                                    <span class="skin-color">Availability:</span>
+                                    <span class="mileage pull-right">Yes</span>
+                                </div>
+                                <p class="description">If you book this car for limited milege you can drive 120 KM, When you pass this limit you have to pay some tax for every extra kilometers.</p>
+                                <a class="button yellow full-width uppercase btn-small" href="/book">Book Now</a>
+                            </div>
+                        </article>
+
+                        <div class="travelo-box book-with-us-box">
+                            <h4>Why Book with us?</h4>
+                            <ul>
+                                <li>
+                                    <i class="soap-icon-hotel-1 circle"></i>
+                                    <h5 class="title"><a href="#">Home delivery</a></h5>
+                                    <p>Our speciality is car door delivery, You can book the car anytime from anyware. Aditional payment will be charged for door delivery.</p>
+                                </li>
+                                <li>
+                                    <i class="soap-icon-savings circle"></i>
+                                    <h5 class="title"><a href="#">Low Rates &amp; Savings</a></h5>
+                                    <p>We provide the cars for low prices.</p>
+                                </li>
+                                <li>
+                                    <i class="soap-icon-support circle"></i>
+                                    <h5 class="title"><a href="#">Excellent customer Support</a></h5>
+                                    <p>You can contact us any time. Will provide clear information about cars & about our company.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="travelo-box contact-box">
+                            <h4>Need Gleefly Help?</h4>
+                            <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
+                            <address class="contact-details">
+                                <span class="contact-phone"><i class="soap-icon-phone"></i>+94768035551</span>
+                                <br>
+                                <a class="contact-email" href="#">info@gleefly.com</a>
+                            </address>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer">
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="row footer-pad">
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Discover</h2>
+                            <ul class="discover triangle hover row">
+                                <li class="col-xs-6"><a href="#">Safety</a></li>
+                                <li class="col-xs-6"><a href="#">About</a></li>
+                                <li class="col-xs-6"><a href="#">Travelo Picks</a></li>
+                                <li class="col-xs-6"><a href="#">Latest Jobs</a></li>
+                                <li class="active col-xs-6"><a href="#">Mobile</a></li>
+                                <li class="col-xs-6"><a href="#">Press Releases</a></li>
+                                <li class="col-xs-6"><a href="#">Why Host</a></li>
+                                <li class="col-xs-6"><a href="#">Blog Posts</a></li>
+                                <li class="col-xs-6"><a href="#">Social Connect</a></li>
+                                <li class="col-xs-6"><a href="#">Help Topics</a></li>
+                                <li class="col-xs-6"><a href="#">Site Map</a></li>
+                                <li class="col-xs-6"><a href="#">Policies</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Travel News</h2>
+                            <ul class="travel-news">
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                        <p>You can visit to amazing places through our car.</p>
+                                        <span class="date">25 Sep, 2013</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                        <p>An Insurance is needed for a safe journey.</p>
+                                        <span class="date"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Mailing List</h2>
+                           <p>Sign up for our mailing list to get latest updates and offers.</p>
+                            <br />
+                            <div class="icon-check">
+                                <input type="text" class="input-text full-width" placeholder="your email" />
+                            </div>
+                            <br />
+                            <span>We respect your privacy</span>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>About Gleefly</h2>
+                            <!-- <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massaidp nequetiam lore elerisque.</p> -->
+                            <br />
+                            <address class="contact-details">
+                                <span class="contact-phone"><i class="soap-icon-phone"></i> +94768035551</span>
+                                <br />
+                                <a href="#" class="contact-email">info@gleefly.com</a>
+                            </address>
+                            <ul class="social-icons clearfix">
+                                <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
+                                <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
+                                <li class="dribble"><a title="dribble" href="#" data-toggle="tooltip"><i class="soap-icon-dribble"></i></a></li>
+                                <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom gray-area">
+                <div class="container">
+                    <div class="logo pull-left">
+                        <a href="index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </div>
+                    <div class="pull-right">
+                        <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                    </div>
+                    <div class="copyright pull-right">
+                        <p>&copy; 2018 Gleefly</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- load revolution slider scripts -->
+    <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- load BXSlider scripts -->
+    <script type="text/javascript" src="components/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+    <!-- load FlexSlider scripts -->
+    <script type="text/javascript" src="components/flexslider/jquery.flexslider-min.js"></script>
+
+    <script type="text/javascript" src="js/calendar.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+
+    <!-- load page Javascript -->
+    <script type="text/javascript" src="js/theme-scripts.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
