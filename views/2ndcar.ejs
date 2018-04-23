@@ -77,13 +77,17 @@
                     </h1>
 
                     <nav id="main-menu" role="navigation">
+                        <ul class="menu quick-menu pull-left">
+
+
+                      </ul>
                         <ul class="menu quick-menu pull-right">
-
-
+                          <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                            <li><a href="/about"><span class="fa fa-info"></span> About</a></li>
 
 
                           <% if(user){ %>
-                        <!--Welcome...!!--><li><a href="/profile">
+                        <!--Welcome...!!--><li><a href=""><span class="glyphicon glyphicon-user"></span>
                         <% if (user.twitter.username != null) { %>
                         <%= user.twitter.username %>
                         <% } else if (user.google.email != null) { %>
@@ -91,7 +95,7 @@
                         <% } else if (user.facebook.name  != null)  { %>
                         <%= user.facebook.name  %>
                         <% } else { %>
-                        <%= user.local.email %>
+                        <%= user.local.lastname %>
                         <% } %>
                         </a>
                         </li>
@@ -102,10 +106,9 @@
                                 <li><a href="/signup"><span class="glyphicon glyphicon-user"></span>
                              Sign Up</a></li>
                         <% } %>
-                        <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                          <li><a href="/about"><span class="fa fa-info"></span> About</a></li>
 
-                            <!-- <li class="menu-item-has-children">
+
+                      <!-- <li class="menu-item-has-children">
                                 <a href="car-index.html">Cars</a>
                                 <ul>
                                     <li><a href="car-index.html">Home Cars</a></li>
@@ -119,7 +122,13 @@
                             </li> -->
 
 
+
+
+
+
+
                         </ul>
+
                     </nav>
                 </div>
 

@@ -78,6 +78,7 @@ module.exports = function(passport) {
 
           var firstname= req.body.firstname;
           var lastname= req.body.lastname;
+          var phonenumber= req.body.phoneNumber;
 
 
         if (email)
@@ -102,6 +103,7 @@ module.exports = function(passport) {
                         newUser.local.firstname  = firstname;
                         newUser.local.lastname  = lastname;
                         newUser.local.email    = email;
+                        newUser.local.phonenumber    = phonenumber;
                         newUser.local.password = newUser.generateHash(password);
 
                         newUser.save(function(err) {
