@@ -31,6 +31,12 @@ module.exports = function(app, passport) {
         });
         // load the index.ejs file
     });
+    app.get('/indica2012', function(req, res) {
+        res.render('indica2012.ejs', {
+          user : req.user
+        });
+        // load the index.ejs file
+    });
 
     app.get('/2ndcar', function(req, res) {
         res.render('2ndcar.ejs', {
