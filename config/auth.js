@@ -4,7 +4,7 @@ module.exports = {
   'facebookAuth' : {
       'clientID'      : '357977017943125', // your App ID
       'clientSecret'  : 'e3427977539e1f6348e0652470639142',
-      'callbackURL'   : 'http://gleefly.herokuapp.com/auth/facebook/callback',
+      'callbackURL'   : 'https://gleefly.herokuapp.com/auth/facebook/callback',
       'profileURL'    : 'https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email',
       'profileFields' : ['id', 'emails', 'name'] // For requesting permissions from Facebook API
   },
@@ -18,7 +18,7 @@ module.exports = {
     'googleAuth' : {
         'clientID'      : '719244576802-vb1l8je58jr8reg3ocgnp056o4sucohu.apps.googleusercontent.com',
         'clientSecret'  : '6JDLMcKZhQAYtbvOZpTr-P8C',
-        'callbackURL'   : 'http://gleefly.herokuapp.com/auth/google/callback'
+          'callbackURL'   : 'http://gleefly.herokuapp.com/auth/google/callback'
     }
 
 };
