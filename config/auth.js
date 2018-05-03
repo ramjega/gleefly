@@ -2,8 +2,8 @@
 module.exports = {
 
   'facebookAuth' : {
-      'clientID'      : '189039655051547', // your App ID
-      'clientSecret'  : '12c806e29b71a7ed8fad7d1aaa481e18',
+      'clientID'      : '357977017943125', // your App ID
+      'clientSecret'  : 'e3427977539e1f6348e0652470639142',
       'callbackURL'   : 'http://gleefly.herokuapp.com/auth/facebook/callback',
       'profileURL'    : 'https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email',
       'profileFields' : ['id', 'emails', 'name'] // For requesting permissions from Facebook API

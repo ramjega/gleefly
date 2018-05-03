@@ -132,8 +132,9 @@ module.exports = function(app, passport) {
       // handle the callback after facebook has authenticated the user
       app.get('/auth/facebook/callback',
           passport.authenticate('facebook', {
-              successRedirect : '/profile',
-              failureRedirect : '/'
+              successRedirect : '/',
+              failureRedirect : '/login',
+              failureFlash : true // allow flash messages
           }));
 
           // =====================================
@@ -147,8 +148,9 @@ module.exports = function(app, passport) {
         // the callback after google has authenticated the user
         app.get('/auth/google/callback',
                 passport.authenticate('google', {
-                        successRedirect : '/profile',
-                        failureRedirect : '/'
+                        successRedirect : '/',
+                        failureRedirect : '/login',
+                        failureFlash : true // allow flash messages
                 }));
 
 
@@ -161,8 +163,9 @@ module.exports = function(app, passport) {
                 // handle the callback after twitter has authenticated the user
                 app.get('/auth/twitter/callback',
                     passport.authenticate('twitter', {
-                        successRedirect : '/profile',
-                        failureRedirect : '/'
+                        successRedirect : '/',
+                        failureRedirect : '/login',
+                        failureFlash : true // allow flash messages
                     }));
 
 
